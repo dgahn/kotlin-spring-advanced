@@ -1,10 +1,11 @@
 package me.dgahn.v0
 
+import me.dgahn.v1.OrderServiceV1
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController // ResponseBody + Controller
-class OrderControllerV0(private val orderServiceV0: OrderServiceV0) {
+class OrderControllerV0(private val orderServiceV0: OrderServiceV1) {
 
     @GetMapping("/v0/request")
     fun request(itemId: String): String {

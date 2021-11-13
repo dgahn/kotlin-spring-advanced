@@ -1,2 +1,2 @@
-GET http://localhost:8080/request?itemId=ex
+GET http://localhost:8080/v1/request?itemId=abc
 Accept: application/json

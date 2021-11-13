@@ -1,1 +1,1 @@
-rootProject.name = "vacation-management-system"
+rootProject.name = "kotlin-spring-advanced"
