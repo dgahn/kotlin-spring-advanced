@@ -11,7 +11,7 @@ data class TraceId(
         private fun createId() = UUID.randomUUID().toString().substring(0, 8)
     }
 
-    private fun createNextId() = this.copy(level = this.level + 1)
+    fun createNextId() = this.copy(level = this.level + 1)
 
     private fun createPreviousId() = this.copy(level = this.level - 1)
 
