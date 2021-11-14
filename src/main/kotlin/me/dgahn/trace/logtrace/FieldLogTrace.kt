@@ -3,9 +3,7 @@ package me.dgahn.trace.logtrace
 import me.dgahn.trace.TraceId
 import me.dgahn.trace.TraceStatus
 import mu.KotlinLogging
-import org.springframework.stereotype.Component
 
-@Component
 class FieldLogTrace : LogTrace {
     companion object {
         private val logger = KotlinLogging.logger { }

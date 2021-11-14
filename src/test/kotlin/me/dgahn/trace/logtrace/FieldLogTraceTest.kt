@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 
 internal class FieldLogTraceTest {
 
-    val trace = FieldLogTrace()
+    private val trace = FieldLogTrace()
 
     @Test
     fun begin_end_level2() {

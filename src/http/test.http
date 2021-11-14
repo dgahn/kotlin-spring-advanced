@@ -5,3 +5,11 @@ Accept: application/json
 
 GET http://localhost:8080/v2/request?itemId=abc
 Accept: application/json
+###
+
+GET http://localhost:8080/v3/request?itemId=abc
+Accept: application/json
+###
+
+GET http://localhost:8080/v3/request?itemId=ex
+Accept: application/json
