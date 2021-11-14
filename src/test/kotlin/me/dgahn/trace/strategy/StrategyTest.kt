@@ -1,6 +1,7 @@
 package me.dgahn.trace.strategy
 
 import me.dgahn.trace.strategy.code.strategy.ContextV1
+import me.dgahn.trace.strategy.code.strategy.ContextV2
 import me.dgahn.trace.strategy.code.strategy.Strategy
 import me.dgahn.trace.strategy.code.strategy.StrategyLogic1
 import me.dgahn.trace.strategy.code.strategy.StrategyLogic2
@@ -53,5 +54,19 @@ class StrategyTest {
         val strategyLogic2 = Strategy { logger.info { "비즈니스 로직2 실행" } }
         val context2 = ContextV1(strategyLogic2)
         context2.execute()
+    }
+
+    @Test
+    fun strategyV3() {
+        val context = ContextV2()
+        context.execute(StrategyLogic1())
+        context.execute(StrategyLogic2())
+    }
+
+    @Test
+    fun strategyV4() {
+        val context = ContextV2()
+        context.execute { logger.info { "비즈니스 로직1 실행" } }
+        context.execute { logger.info { "비즈니스 로직2 실행" } }
     }
 }
