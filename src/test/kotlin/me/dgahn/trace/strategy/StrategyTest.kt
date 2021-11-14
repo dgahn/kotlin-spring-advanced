@@ -1,5 +1,8 @@
 package me.dgahn.trace.strategy
 
+import me.dgahn.trace.strategy.code.strategy.ContextV1
+import me.dgahn.trace.strategy.code.strategy.StrategyLogic1
+import me.dgahn.trace.strategy.code.strategy.StrategyLogic2
 import mu.KotlinLogging
 import org.junit.jupiter.api.Test
 
@@ -28,5 +31,16 @@ class StrategyTest {
         val endTime = System.currentTimeMillis()
         val resultTime = endTime - startTime
         logger.info { "resultTime=$resultTime" }
+    }
+
+    @Test
+    fun strategyV1() {
+        val strategyLogic1 = StrategyLogic1()
+        val context1 = ContextV1(strategyLogic1)
+        context1.execute()
+
+        val strategyLogic2 = StrategyLogic2()
+        val context2 = ContextV1(strategyLogic2)
+        context2.execute()
     }
 }
