@@ -13,7 +13,7 @@ data class TraceId(
 
     fun createNextId() = this.copy(level = this.level + 1)
 
-    private fun createPreviousId() = this.copy(level = this.level - 1)
+    fun createPreviousId() = this.copy(level = this.level - 1)
 
     fun isFirstLevel() = level == 0
 }
