@@ -1,6 +1,7 @@
 package me.dgahn.trace.strategy
 
 import me.dgahn.trace.strategy.code.strategy.ContextV1
+import me.dgahn.trace.strategy.code.strategy.Strategy
 import me.dgahn.trace.strategy.code.strategy.StrategyLogic1
 import me.dgahn.trace.strategy.code.strategy.StrategyLogic2
 import mu.KotlinLogging
@@ -40,6 +41,16 @@ class StrategyTest {
         context1.execute()
 
         val strategyLogic2 = StrategyLogic2()
+        val context2 = ContextV1(strategyLogic2)
+        context2.execute()
+    }
+
+    @Test
+    fun strategyV2() {
+        val strategyLogic1 = Strategy { logger.info { "비즈니스 로직1 실행" } }
+        val context1 = ContextV1(strategyLogic1)
+        context1.execute()
+        val strategyLogic2 = Strategy { logger.info { "비즈니스 로직2 실행" } }
         val context2 = ContextV1(strategyLogic2)
         context2.execute()
     }
