@@ -1,7 +1,7 @@
 package me.dgahn.trace
 
-import me.dgahn.trace.logtrace.FieldLogTrace
 import me.dgahn.trace.logtrace.LogTrace
+import me.dgahn.trace.logtrace.ThreadLocalLogTrace
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -9,5 +9,5 @@ import org.springframework.context.annotation.Configuration
 class LogTraceConfig {
 
     @Bean
-    fun logTrace(): LogTrace = FieldLogTrace()
+    fun logTrace(): LogTrace = ThreadLocalLogTrace()
 }
