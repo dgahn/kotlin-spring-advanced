@@ -18,5 +18,4 @@ class TemplateCallbackTest {
         template.execute { logger.info { "비즈니스 로직1 실행" } }
         template.execute { logger.info { "비즈니스 로직2 실행" } }
     }
-
 }
