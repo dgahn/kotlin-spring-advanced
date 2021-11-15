@@ -12,5 +12,4 @@ class DecoratorPatternClient(private val component: Component) {
         val result = component.operation()
         logger.info { "result:$result" }
     }
-
 }
