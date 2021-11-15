@@ -1,22 +1,22 @@
-package me.dgahn.v2
+package me.dgahn.log.v3
 
 import me.dgahn.trace.TraceStatus
-import me.dgahn.trace.hellotrace.HelloTraceV2
+import me.dgahn.trace.logtrace.LogTrace
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController // ResponseBody + Controller
-class OrderControllerV2(
-    private val orderServiceV0: OrderServiceV2,
-    private val trace: HelloTraceV2
+class OrderControllerV3(
+    private val orderServiceV0: OrderServiceV3,
+    private val trace: LogTrace
 ) {
 
-    @GetMapping("/v2/request")
+    @GetMapping("/v3/request")
     fun request(itemId: String): String {
         var status: TraceStatus? = null
         try {
             status = trace.begin("OrderControllerV2.request()")
-            orderServiceV0.orderItem(status.traceId, itemId)
+            orderServiceV0.orderItem(itemId)
             trace.end(status)
             return "ok"
         } catch (e: IllegalStateException) {

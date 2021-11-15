@@ -1,4 +1,4 @@
-package me.dgahn.v3
+package me.dgahn.log.v3
 
 import me.dgahn.trace.TraceStatus
 import me.dgahn.trace.logtrace.LogTrace

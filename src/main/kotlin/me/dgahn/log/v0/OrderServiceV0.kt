@@ -1,4 +1,4 @@
-package me.dgahn.v0
+package me.dgahn.log.v0
 
 import org.springframework.stereotype.Service
 

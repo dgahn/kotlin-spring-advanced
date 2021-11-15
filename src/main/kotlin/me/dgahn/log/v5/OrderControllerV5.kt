@@ -1,4 +1,4 @@
-package me.dgahn.v5
+package me.dgahn.log.v5
 
 import me.dgahn.trace.callback.TraceTemplate
 import me.dgahn.trace.logtrace.LogTrace

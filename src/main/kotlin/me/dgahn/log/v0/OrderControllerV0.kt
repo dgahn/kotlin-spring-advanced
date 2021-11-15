@@ -1,6 +1,6 @@
-package me.dgahn.v0
+package me.dgahn.log.v0
 
-import me.dgahn.v1.OrderServiceV1
+import me.dgahn.log.v1.OrderServiceV1
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 

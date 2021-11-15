@@ -1,4 +1,4 @@
-package me.dgahn.v4
+package me.dgahn.log.v4
 
 import me.dgahn.trace.logtrace.LogTrace
 import me.dgahn.trace.template.AbstractTemplate

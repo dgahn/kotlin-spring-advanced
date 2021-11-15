@@ -1,24 +1,29 @@
-package me.dgahn.v5
+package me.dgahn.log.v3
 
-import me.dgahn.trace.callback.TraceTemplate
+import me.dgahn.trace.TraceStatus
 import me.dgahn.trace.logtrace.LogTrace
 import mu.KotlinLogging
 import org.springframework.stereotype.Repository
 
+private const val SLEEP = 1_000L
+
+val logger = KotlinLogging.logger { }
+
 @Repository
-class OrderRepositoryV5(private val trace: LogTrace) {
-    companion object {
-        private const val SLEEP = 1_000L
-        val logger = KotlinLogging.logger { }
-    }
-    private val template = TraceTemplate(trace)
+class OrderRepositoryV3(private val trace: LogTrace) {
 
     fun save(itemId: String) {
-        template.execute("OrderRepositoryV4.save()") {
+        var status: TraceStatus? = null
+        try {
+            status = trace.begin("OrderRepositoryV2.save()")
             if (itemId == "ex") {
                 throw IllegalStateException("예외 발생!")
             }
             sleep(SLEEP)
+            trace.end(status)
+        } catch (e: IllegalStateException) {
+            trace.exception(status!!, e)
+            throw e
         }
     }
 

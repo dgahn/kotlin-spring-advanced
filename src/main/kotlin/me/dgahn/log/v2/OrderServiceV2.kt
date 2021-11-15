@@ -1,4 +1,4 @@
-package me.dgahn.v2
+package me.dgahn.log.v2
 
 import me.dgahn.trace.TraceId
 import me.dgahn.trace.TraceStatus

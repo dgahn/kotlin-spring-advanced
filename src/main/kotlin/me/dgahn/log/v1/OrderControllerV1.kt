@@ -1,21 +1,21 @@
-package me.dgahn.v3
+package me.dgahn.log.v1
 
 import me.dgahn.trace.TraceStatus
-import me.dgahn.trace.logtrace.LogTrace
+import me.dgahn.trace.hellotrace.HelloTraceV1
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController // ResponseBody + Controller
-class OrderControllerV3(
-    private val orderServiceV0: OrderServiceV3,
-    private val trace: LogTrace
+class OrderControllerV1(
+    private val orderServiceV0: OrderServiceV1,
+    private val trace: HelloTraceV1
 ) {
 
-    @GetMapping("/v3/request")
+    @GetMapping("/v1/request")
     fun request(itemId: String): String {
         var status: TraceStatus? = null
         try {
-            status = trace.begin("OrderControllerV2.request()")
+            status = trace.begin("OrderControllerV1.request()")
             orderServiceV0.orderItem(itemId)
             trace.end(status)
             return "ok"
