@@ -3,6 +3,7 @@ package me.dgahn.proxy.pureproxy.decorator
 import me.dgahn.proxy.pureproxy.decorator.code.DecoratorPatternClient
 import me.dgahn.proxy.pureproxy.decorator.code.MessageDecorator
 import me.dgahn.proxy.pureproxy.decorator.code.RealComponent
+import me.dgahn.proxy.pureproxy.decorator.code.TimeDecorator
 import mu.KotlinLogging
 import org.junit.jupiter.api.Test
 
@@ -23,6 +24,15 @@ class DecoratorPatternTest {
         val realComponent = RealComponent()
         val messageDecorator = MessageDecorator(realComponent)
         val client = DecoratorPatternClient(messageDecorator)
+        client.execute()
+    }
+
+    @Test
+    fun decorator2() {
+        val realComponent = RealComponent()
+        val messageDecorator = MessageDecorator(realComponent)
+        val timeDecorator = TimeDecorator(messageDecorator)
+        val client = DecoratorPatternClient(timeDecorator)
         client.execute()
     }
 }
