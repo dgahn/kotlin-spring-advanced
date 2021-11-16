@@ -1,4 +1,4 @@
-package me.dgahn.app.v3
+package me.dgahn.proxy.app.v3
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Repository

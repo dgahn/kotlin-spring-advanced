@@ -1,4 +1,4 @@
-package me.dgahn.app.v1
+package me.dgahn.proxy.app.v1
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

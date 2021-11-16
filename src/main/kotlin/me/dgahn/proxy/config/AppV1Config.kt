@@ -1,8 +1,8 @@
-package me.dgahn.app.config
+package me.dgahn.proxy.config
 
-import me.dgahn.app.v1.OrderControllerV1Impl
-import me.dgahn.app.v1.OrderRepositoryV1Impl
-import me.dgahn.app.v1.OrderServiceV1Impl
+import me.dgahn.proxy.app.v1.OrderControllerV1Impl
+import me.dgahn.proxy.app.v1.OrderRepositoryV1Impl
+import me.dgahn.proxy.app.v1.OrderServiceV1Impl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

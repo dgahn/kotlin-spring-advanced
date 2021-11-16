@@ -1,4 +1,4 @@
-package me.dgahn.app.v1
+package me.dgahn.proxy.app.v1
 
 class OrderControllerV1Impl(
     private val orderService: OrderServiceV1

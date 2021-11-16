@@ -1,4 +1,4 @@
-package me.dgahn.app.v2
+package me.dgahn.proxy.app.v2
 
 import mu.KotlinLogging
 

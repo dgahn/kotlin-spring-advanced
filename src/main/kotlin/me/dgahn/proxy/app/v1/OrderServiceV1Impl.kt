@@ -1,4 +1,4 @@
-package me.dgahn.app.v1
+package me.dgahn.proxy.app.v1
 
 class OrderServiceV1Impl(
     private val orderRepository: OrderRepositoryV1
