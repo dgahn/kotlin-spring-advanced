@@ -1,6 +1,6 @@
 package me.dgahn
 
-import me.dgahn.proxy.config.v1.InterfaceProxyConfig
+import me.dgahn.proxy.config.v1.ConcreteProxyConfig
 import me.dgahn.trace.logtrace.ThreadLocalLogTrace
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Import
 
 // @Import(value = [AppV1Config::class, AppV2Config::class])
-@Import(value = [InterfaceProxyConfig::class])
+// @Import(value = [InterfaceProxyConfig::class])
+@Import(value = [ConcreteProxyConfig::class])
 @SpringBootApplication(scanBasePackages = ["me.dgahn.proxy.app"])
 class App {
     @Bean

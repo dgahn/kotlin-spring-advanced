@@ -2,13 +2,13 @@ package me.dgahn.proxy.app.v2
 
 import mu.KotlinLogging
 
-class OrderRepositoryV2 {
+open class OrderRepositoryV2 {
     companion object {
         private val logger = KotlinLogging.logger { }
         private const val SLEEP = 1_000L
     }
 
-    fun save(itemId: String) {
+    open fun save(itemId: String) {
         if (itemId == "eq") {
             throw IllegalStateException("예외 발생!")
         }

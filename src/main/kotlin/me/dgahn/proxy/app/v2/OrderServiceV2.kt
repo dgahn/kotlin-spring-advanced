@@ -1,9 +1,9 @@
 package me.dgahn.proxy.app.v2
 
-class OrderServiceV2(
+open class OrderServiceV2(
     private val orderRepository: OrderRepositoryV2
 ) {
-    fun orderItem(itemId: String) {
+    open fun orderItem(itemId: String) {
         orderRepository.save(itemId)
     }
 }
